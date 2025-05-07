@@ -30,6 +30,7 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
+            button1 = new Button();
             BtnEntrar = new Button();
             TxtSenha = new TextBox();
             TxtLogin = new TextBox();
@@ -49,6 +50,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(BtnEntrar);
             panel2.Controls.Add(TxtSenha);
             panel2.Controls.Add(TxtLogin);
@@ -59,6 +61,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(519, 450);
             panel2.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(442, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(44, 43);
+            button1.TabIndex = 3;
+            button1.Text = "X";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // BtnEntrar
             // 
@@ -74,6 +86,7 @@
             BtnEntrar.TabIndex = 2;
             BtnEntrar.Text = "Entrar";
             BtnEntrar.UseVisualStyleBackColor = true;
+            BtnEntrar.Click += BtnEntrar_Click;
             // 
             // TxtSenha
             // 
@@ -147,5 +160,6 @@
         private Label label1;
         private Label label2;
         private Button BtnEntrar;
+        private Button button1;
     }
 }
