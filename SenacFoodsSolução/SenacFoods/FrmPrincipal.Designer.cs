@@ -65,6 +65,7 @@
             button4.TabIndex = 0;
             button4.Text = "Usuário";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -78,6 +79,7 @@
             button3.TabIndex = 0;
             button3.Text = "Pedido Cozinha";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -85,12 +87,13 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.Black;
-            button2.Location = new Point(189, 47);
+            button2.Location = new Point(171, 47);
             button2.Name = "button2";
             button2.Size = new Size(147, 125);
             button2.TabIndex = 0;
             button2.Text = "Comanda";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -104,6 +107,7 @@
             button1.TabIndex = 0;
             button1.Text = "Cardápio";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button5
             // 

@@ -29,5 +29,29 @@ namespace SenacFoods
             Close();
             Application.Exit();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FrmUsuario().Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FrmPedido_Cozinha().Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FrmComanda().Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new FrmCardápio().Show();
+        }
     }
 }
