@@ -92,11 +92,11 @@
             // 
             TxtSenha.BackColor = Color.Black;
             TxtSenha.BorderStyle = BorderStyle.None;
-            TxtSenha.Font = new Font("Algerian", 18F);
+            TxtSenha.Font = new Font("Arial Narrow", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TxtSenha.ForeColor = Color.White;
             TxtSenha.Location = new Point(71, 166);
             TxtSenha.Name = "TxtSenha";
-            TxtSenha.Size = new Size(372, 48);
+            TxtSenha.Size = new Size(372, 42);
             TxtSenha.TabIndex = 0;
             TxtSenha.Text = "Senha";
             // 
@@ -104,11 +104,11 @@
             // 
             TxtLogin.BackColor = Color.Black;
             TxtLogin.BorderStyle = BorderStyle.None;
-            TxtLogin.Font = new Font("Algerian", 18F);
+            TxtLogin.Font = new Font("Arial Narrow", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TxtLogin.ForeColor = Color.White;
             TxtLogin.Location = new Point(71, 86);
             TxtLogin.Name = "TxtLogin";
-            TxtLogin.Size = new Size(372, 48);
+            TxtLogin.Size = new Size(372, 42);
             TxtLogin.TabIndex = 0;
             TxtLogin.Text = "USUÁRIO";
             TxtLogin.TextChanged += TxtLogin_TextChanged;

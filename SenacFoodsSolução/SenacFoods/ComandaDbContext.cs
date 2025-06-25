@@ -32,6 +32,5 @@ public class ComandaDBContext:DbContext
     public DbSet<ComandaItem> ComandaItems { get; set; }
     public DbSet<ComandaItem> PedidoCozinhas { get; set; }
     public DbSet<ComandaItem> PedidoCozinhaItems{ get; set; }
-
-
+    public object Usuario { get; internal set; }
 }

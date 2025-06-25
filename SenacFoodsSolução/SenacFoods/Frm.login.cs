@@ -38,18 +38,41 @@ namespace SenacFoods
             }
         }
 
+
         private bool ValidarLogin(string nome, string senha)
-        {   //SE nome é igual a admin E senha é igual a 123
-            if (nome == "admin" && senha == "123")
-            {//RETURNA verdadeiro
+        {
+            bool usuarioValido = false;
+            using (var banco = new ComandaDBContext())
+            {
+
+                var usuario = banco
+                    .Usuarios
+                    .FirstOrDefault(u => u.Email.ToLower() == nome.ToLower() && u.Senha == senha);
+                if (usuario is not null)
+                    usuarioValido = true;
+
+            }
+            // se nome é igual a admin e senha é igual a 123
+            if (usuarioValido)
+            { //Returna verdadeiro
                 return true;
             }
             else
-            { //EXIBE uma mensagem de erro
-                MessageBox.Show("Login ou Senha inválidos");
-            }// Retorna false
-            
+            {  //Exibe mensagem de erro
+                MessageBox.Show("Login ou senha inválidos");
+            } //Retorna false
             return false;
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
+            Application.Exit();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
