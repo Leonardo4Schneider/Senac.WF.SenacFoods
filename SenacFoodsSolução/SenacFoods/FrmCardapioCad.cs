@@ -41,7 +41,7 @@ namespace SenacFoods
 
                 //capturar os dados da tela
                 string titulo = txtTitulo.Text;
-                    string descricao = txtDescricao.Text;
+                string descricao = txtDescricao.Text;
                 decimal.TryParse(textPreco.Text, out var preco);
                 bool possuiPreparo = chkPossuiPreparo.Checked;
                 //criar um novo cardapio
@@ -52,11 +52,32 @@ namespace SenacFoods
                     Preco = preco,
                     PossuiPreparo = possuiPreparo
                 };
-            //adicionar o cardapio //salvar as alteraçoes no banco
-             banco.CardapioItems.Add(cardapio);
-             banco.SaveChanges();
-             }
+                //adicionar o cardapio //salvar as alteraçoes no banco
+                banco.CardapioItems.Add(cardapio);
+                banco.SaveChanges();
+            }
+            MessageBox.Show("Cardapio salvo com sucesso!",
+                "Sucesso",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            this.Close();
 
-    }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

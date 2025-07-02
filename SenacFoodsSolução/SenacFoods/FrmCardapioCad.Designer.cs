@@ -30,7 +30,7 @@
         {
             panel1 = new Panel();
             label1 = new Label();
-            button3 = new Button();
+            btnFechar = new Button();
             textBox1 = new TextBox();
             label2 = new Label();
             label3 = new Label();
@@ -50,7 +50,7 @@
             // 
             panel1.BackColor = Color.Aquamarine;
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(button3);
+            panel1.Controls.Add(btnFechar);
             panel1.Controls.Add(textBox1);
             panel1.Location = new Point(-2, -5);
             panel1.Name = "panel1";
@@ -68,16 +68,17 @@
             label1.TabIndex = 3;
             label1.Text = "Pesquisar:";
             // 
-            // button3
+            // btnFechar
             // 
-            button3.BackColor = Color.Black;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(1481, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(62, 51);
-            button3.TabIndex = 5;
-            button3.Text = "X";
-            button3.UseVisualStyleBackColor = false;
+            btnFechar.BackColor = Color.Black;
+            btnFechar.ForeColor = Color.White;
+            btnFechar.Location = new Point(1481, 3);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new Size(62, 51);
+            btnFechar.TabIndex = 5;
+            btnFechar.Text = "X";
+            btnFechar.UseVisualStyleBackColor = false;
+            btnFechar.Click += btnFechar_Click;
             // 
             // textBox1
             // 
@@ -158,6 +159,7 @@
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cardápio";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // btnSalvar
             // 
@@ -190,6 +192,7 @@
             btnCancelar.TabIndex = 21;
             btnCancelar.Text = "% Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // FrmCardapioCad
             // 
@@ -211,7 +214,7 @@
         #endregion
         private Panel panel1;
         private Label label1;
-        private Button button3;
+        private Button btnFechar;
         private TextBox textBox1;
         private Label label2;
         private Label label3;

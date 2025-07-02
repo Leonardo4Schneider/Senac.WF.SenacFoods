@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
+            btnAdicionar = new Button();
+            btnExcluirCardapio = new Button();
             button2 = new Button();
+            dataGridView1 = new DataGridView();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtPesquisa = new TextBox();
             button3 = new Button();
-            button4 = new Button();
             panel1 = new Panel();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -44,8 +44,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btnAdicionar);
+            groupBox1.Controls.Add(btnExcluirCardapio);
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(dataGridView1);
             groupBox1.Location = new Point(43, 128);
@@ -57,27 +57,30 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Cardápio";
             // 
-            // dataGridView1
+            // btnAdicionar
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(60, 110);
-            dataGridView1.Margin = new Padding(4, 5, 4, 5);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1391, 288);
-            dataGridView1.TabIndex = 0;
+            btnAdicionar.BackColor = Color.Yellow;
+            btnAdicionar.Location = new Point(60, 48);
+            btnAdicionar.Margin = new Padding(4, 5, 4, 5);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Size = new Size(168, 52);
+            btnAdicionar.TabIndex = 6;
+            btnAdicionar.Text = "+ Item";
+            btnAdicionar.UseVisualStyleBackColor = false;
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
-            // button1
+            // btnExcluirCardapio
             // 
-            button1.BackColor = Color.OrangeRed;
-            button1.ForeColor = Color.Black;
-            button1.Location = new Point(1090, 424);
-            button1.Margin = new Padding(4, 5, 4, 5);
-            button1.Name = "button1";
-            button1.Size = new Size(167, 59);
-            button1.TabIndex = 1;
-            button1.Text = "% Excluir";
-            button1.UseVisualStyleBackColor = false;
+            btnExcluirCardapio.BackColor = Color.OrangeRed;
+            btnExcluirCardapio.ForeColor = Color.Black;
+            btnExcluirCardapio.Location = new Point(1090, 424);
+            btnExcluirCardapio.Margin = new Padding(4, 5, 4, 5);
+            btnExcluirCardapio.Name = "btnExcluirCardapio";
+            btnExcluirCardapio.Size = new Size(167, 59);
+            btnExcluirCardapio.TabIndex = 1;
+            btnExcluirCardapio.Text = "% Excluir";
+            btnExcluirCardapio.UseVisualStyleBackColor = false;
+            btnExcluirCardapio.Click += btnExcluirCardapio_Click;
             // 
             // button2
             // 
@@ -89,7 +92,16 @@
             button2.TabIndex = 2;
             button2.Text = "% Editar";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(60, 110);
+            dataGridView1.Margin = new Padding(4, 5, 4, 5);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(1391, 288);
+            dataGridView1.TabIndex = 0;
             // 
             // label1
             // 
@@ -101,13 +113,14 @@
             label1.TabIndex = 3;
             label1.Text = "Pesquisar:";
             // 
-            // textBox1
+            // txtPesquisa
             // 
-            textBox1.Location = new Point(152, 31);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(1098, 45);
-            textBox1.TabIndex = 4;
+            txtPesquisa.Location = new Point(152, 31);
+            txtPesquisa.Margin = new Padding(4, 5, 4, 5);
+            txtPesquisa.Name = "txtPesquisa";
+            txtPesquisa.Size = new Size(1098, 45);
+            txtPesquisa.TabIndex = 4;
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
             // button3
             // 
@@ -119,24 +132,14 @@
             button3.TabIndex = 5;
             button3.Text = "X";
             button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.Yellow;
-            button4.Location = new Point(60, 48);
-            button4.Margin = new Padding(4, 5, 4, 5);
-            button4.Name = "button4";
-            button4.Size = new Size(168, 52);
-            button4.TabIndex = 6;
-            button4.Text = "+ Item";
-            button4.UseVisualStyleBackColor = false;
+            button3.Click += btnFecharCardapiocs;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Aquamarine;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(button3);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtPesquisa);
             panel1.Location = new Point(0, -1);
             panel1.Name = "panel1";
             panel1.Size = new Size(1546, 121);
@@ -166,11 +169,11 @@
 
         private GroupBox groupBox1;
         private DataGridView dataGridView1;
-        private Button button1;
+        private Button btnExcluirCardapio;
         private Button button2;
         private Label label1;
-        private TextBox textBox1;
-        private Button button4;
+        private TextBox txtPesquisa;
+        private Button btnAdicionar;
         private Button button3;
         private Panel panel1;
     }
