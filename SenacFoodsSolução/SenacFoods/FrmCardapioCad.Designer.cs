@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
             btnFechar = new Button();
-            textBox1 = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -42,6 +40,7 @@
             btnSalvar = new Button();
             txtDescricao = new RichTextBox();
             btnCancelar = new Button();
+            label1 = new Label();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -51,22 +50,10 @@
             panel1.BackColor = Color.Aquamarine;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnFechar);
-            panel1.Controls.Add(textBox1);
             panel1.Location = new Point(-2, -5);
             panel1.Name = "panel1";
             panel1.Size = new Size(1551, 138);
             panel1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(20, 31);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(118, 32);
-            label1.TabIndex = 3;
-            label1.Text = "Pesquisar:";
             // 
             // btnFechar
             // 
@@ -79,14 +66,6 @@
             btnFechar.Text = "X";
             btnFechar.UseVisualStyleBackColor = false;
             btnFechar.Click += btnFechar_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(152, 31);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(1098, 31);
-            textBox1.TabIndex = 4;
             // 
             // label2
             // 
@@ -194,6 +173,16 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(129, 51);
+            label1.Name = "label1";
+            label1.Size = new Size(264, 41);
+            label1.TabIndex = 6;
+            label1.Text = "Cadastro Cardapio";
+            // 
             // FrmCardapioCad
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -213,9 +202,7 @@
 
         #endregion
         private Panel panel1;
-        private Label label1;
         private Button btnFechar;
-        private TextBox textBox1;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -226,5 +213,6 @@
         private RichTextBox txtDescricao;
         private Button btnCancelar;
         private Button btnSalvar;
+        private Label label1;
     }
 }

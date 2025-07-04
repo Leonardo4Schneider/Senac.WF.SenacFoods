@@ -53,5 +53,12 @@ namespace SenacFoods
             this.Hide();
             new FrmCardápio().Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var buscar = new FrmMesa();
+            buscar.Show();
+        }
     }
 }

@@ -10,32 +10,30 @@ using System.Windows.Forms;
 
 namespace SenacFoods
 {
-    public partial class FrmCardápio : Form
+    public partial class FrmMesa : Form
     {
-        public FrmCardápio()
+        public FrmMesa()
         {
             InitializeComponent();
         }
 
         private void FrmCardápio_Load(object sender, EventArgs e)
         {
-            BuscarCardapio();
+            BuscarMesa();
         }
 
-        private void BuscarCardapio()
+        private void BuscarMesa()
         {
             //conectar no banco de dados
             using (var bd = new ComandaDBContext())
             {
                 // concultar na tabela cardapio item * FROM CARDAPIO
-                var cardapios = bd.CardapioItems.AsQueryable();
+                var mesas = bd.Mesas.AsQueryable();
                 if (!string.IsNullOrEmpty(txtPesquisa.Text))
-                {
-                    cardapios = cardapios.Where(c => c.Titulo.Contains(txtPesquisa.Text) ||
-                                                    c.Descricao.Contains(txtPesquisa.Text));
-                }
+
+                    mesas = mesas.Where(c => c.NumeroMesa == int.Parse(txtPesquisa.Text));
                 //popular o grid com a tabela consultar
-                dataGridView1.DataSource = cardapios.ToList();
+                dataGridView1.DataSource = mesas.ToList();
             }
 
         }
@@ -45,42 +43,26 @@ namespace SenacFoods
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            new FrmCardapioCad().ShowDialog();
-            BuscarCardapio();
+            new FrmMesaCad().ShowDialog();
+            BuscarMesa();
         }
-
-
-
 
         private void btnExcluirCardapio_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnFecharCardapiocs(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
-            //chamar o metodo buscar cardapio
-            BuscarCardapio();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            BuscarMesa();
         }
     }
 }
+
+        
+
+       
+
+        
+
+        

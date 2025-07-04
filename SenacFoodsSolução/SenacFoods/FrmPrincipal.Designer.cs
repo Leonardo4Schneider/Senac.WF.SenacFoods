@@ -36,6 +36,7 @@
             button5 = new Button();
             button6 = new Button();
             lblMensagem = new Label();
+            button7 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -139,12 +140,27 @@
             lblMensagem.TabIndex = 5;
             lblMensagem.Text = "lblMensagem";
             // 
+            // button7
+            // 
+            button7.BackColor = Color.Crimson;
+            button7.FlatAppearance.BorderSize = 0;
+            button7.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button7.ForeColor = Color.Black;
+            button7.Location = new Point(144, 326);
+            button7.Name = "button7";
+            button7.Size = new Size(89, 78);
+            button7.TabIndex = 6;
+            button7.Text = "Mesa";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(855, 450);
+            Controls.Add(button7);
             Controls.Add(lblMensagem);
             Controls.Add(button6);
             Controls.Add(button5);
@@ -168,5 +184,6 @@
         private Button button5;
         private Button button6;
         private Label lblMensagem;
+        private Button button7;
     }
 }
