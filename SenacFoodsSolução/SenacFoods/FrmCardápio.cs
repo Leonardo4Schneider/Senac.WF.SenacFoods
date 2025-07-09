@@ -12,6 +12,7 @@ namespace SenacFoods
 {
     public partial class FrmCardápio : Form
     {
+        CardapioItem? cardapioSelecionado;
         public FrmCardápio()
         {
             InitializeComponent();
@@ -52,9 +53,25 @@ namespace SenacFoods
 
 
 
-        private void btnExcluirCardapio_Click(object sender, EventArgs e)
+        private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Close();
+            if (cardapioSelecionado != null)
+            {
+                using (var bancoDeDados = new ComandaDBContext())
+                {
+                    bancoDeDados.CardapioItems.Remove(cardapioSelecionado);
+                    bancoDeDados.SaveChanges();
+                }
+                MessageBox.Show("Cardápio excluido com sucesso)", "Sucesso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                BuscarCardapio();
+                cardapioSelecionado = null;
+            }
+            else
+            {
+                MessageBox.Show("Selecione um cardapio para excluir", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnFecharCardapiocs(object sender, EventArgs e)
@@ -77,9 +94,30 @@ namespace SenacFoods
         {
 
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        //click do editar
+        private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (cardapioSelecionado != null)
+            {
+                // abrir o formulário de edição
+                var frmCardapioEdit = new FrmCardapioCad(cardapioSelecionado);
+                frmCardapioEdit.ShowDialog();
+                BuscarCardapio();
+                cardapioSelecionado = null;
+            }
+        }
+
+       
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                //pegar o cardapio selecionado
+                cardapioSelecionado = dataGridView1.Rows[e.RowIndex].DataBoundItem as CardapioItem;
+                btnEditar.Enabled = true;
+               
+            }
 
         }
     }

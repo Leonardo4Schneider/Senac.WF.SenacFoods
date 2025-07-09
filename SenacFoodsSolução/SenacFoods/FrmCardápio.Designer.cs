@@ -30,9 +30,9 @@
         {
             groupBox1 = new GroupBox();
             btnAdicionar = new Button();
-            btnExcluirCardapio = new Button();
-            button2 = new Button();
             dataGridView1 = new DataGridView();
+            btnExcluir = new Button();
+            btnEditar = new Button();
             label1 = new Label();
             txtPesquisa = new TextBox();
             button3 = new Button();
@@ -45,8 +45,6 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(btnAdicionar);
-            groupBox1.Controls.Add(btnExcluirCardapio);
-            groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(dataGridView1);
             groupBox1.Location = new Point(43, 128);
             groupBox1.Margin = new Padding(4, 5, 4, 5);
@@ -61,49 +59,52 @@
             // btnAdicionar
             // 
             btnAdicionar.BackColor = Color.Yellow;
-            btnAdicionar.Location = new Point(60, 48);
+            btnAdicionar.Location = new Point(153, -14);
             btnAdicionar.Margin = new Padding(4, 5, 4, 5);
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(168, 52);
+            btnAdicionar.Size = new Size(147, 47);
             btnAdicionar.TabIndex = 6;
             btnAdicionar.Text = "+ Item";
             btnAdicionar.UseVisualStyleBackColor = false;
             btnAdicionar.Click += btnAdicionar_Click;
             // 
-            // btnExcluirCardapio
-            // 
-            btnExcluirCardapio.BackColor = Color.OrangeRed;
-            btnExcluirCardapio.ForeColor = Color.Black;
-            btnExcluirCardapio.Location = new Point(1090, 424);
-            btnExcluirCardapio.Margin = new Padding(4, 5, 4, 5);
-            btnExcluirCardapio.Name = "btnExcluirCardapio";
-            btnExcluirCardapio.Size = new Size(167, 59);
-            btnExcluirCardapio.TabIndex = 1;
-            btnExcluirCardapio.Text = "% Excluir";
-            btnExcluirCardapio.UseVisualStyleBackColor = false;
-            btnExcluirCardapio.Click += btnExcluirCardapio_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Chartreuse;
-            button2.Location = new Point(1276, 424);
-            button2.Margin = new Padding(4, 5, 4, 5);
-            button2.Name = "button2";
-            button2.Size = new Size(175, 59);
-            button2.TabIndex = 2;
-            button2.Text = "% Editar";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(60, 110);
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(4, 43);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1391, 288);
+            dataGridView1.Size = new Size(1482, 515);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.BackColor = Color.OrangeRed;
+            btnExcluir.ForeColor = Color.Black;
+            btnExcluir.Location = new Point(1136, 696);
+            btnExcluir.Margin = new Padding(4, 5, 4, 5);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(167, 59);
+            btnExcluir.TabIndex = 1;
+            btnExcluir.Text = "% Excluir";
+            btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.Chartreuse;
+            btnEditar.Enabled = false;
+            btnEditar.Location = new Point(1324, 696);
+            btnEditar.Margin = new Padding(4, 5, 4, 5);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(175, 59);
+            btnEditar.TabIndex = 2;
+            btnEditar.Text = "% Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // label1
             // 
@@ -154,6 +155,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1546, 934);
             Controls.Add(panel1);
+            Controls.Add(btnEditar);
+            Controls.Add(btnExcluir);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -172,8 +175,8 @@
 
         private GroupBox groupBox1;
         private DataGridView dataGridView1;
-        private Button btnExcluirCardapio;
-        private Button button2;
+        private Button btnExcluir;
+        private Button btnEditar;
         private Label label1;
         private TextBox txtPesquisa;
         private Button btnAdicionar;

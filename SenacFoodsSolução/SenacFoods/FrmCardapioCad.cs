@@ -12,14 +12,18 @@ namespace SenacFoods
 {
     public partial class FrmCardapioCad : Form
     {
+        
         public FrmCardapioCad()
         {
             InitializeComponent();
         }
 
-       
+        public FrmCardapioCad(CardapioItem cardapioitem)
+        {
+            InitializeComponent();
+        }
 
-      
+
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
