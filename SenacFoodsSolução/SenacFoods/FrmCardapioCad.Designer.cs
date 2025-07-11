@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label1 = new Label();
             btnFechar = new Button();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             chkPossuiPreparo = new CheckBox();
             txtTitulo = new TextBox();
-            textPreco = new TextBox();
+            txtPreco = new TextBox();
             groupBox1 = new GroupBox();
             btnSalvar = new Button();
             txtDescricao = new RichTextBox();
             btnCancelar = new Button();
-            label1 = new Label();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -54,6 +54,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1551, 138);
             panel1.TabIndex = 11;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F);
+            label1.Location = new Point(129, 51);
+            label1.Name = "label1";
+            label1.Size = new Size(264, 41);
+            label1.TabIndex = 6;
+            label1.Text = "Cadastro Cardapio";
             // 
             // btnFechar
             // 
@@ -112,13 +122,14 @@
             txtTitulo.Size = new Size(1098, 39);
             txtTitulo.TabIndex = 17;
             // 
-            // textPreco
+            // txtPreco
             // 
-            textPreco.Location = new Point(11, 338);
-            textPreco.Margin = new Padding(4, 5, 4, 5);
-            textPreco.Name = "textPreco";
-            textPreco.Size = new Size(273, 39);
-            textPreco.TabIndex = 18;
+            txtPreco.Location = new Point(11, 338);
+            txtPreco.Margin = new Padding(4, 5, 4, 5);
+            txtPreco.Name = "txtPreco";
+            txtPreco.Size = new Size(273, 39);
+            txtPreco.TabIndex = 18;
+            txtPreco.TextChanged += txtPreco_TextChanged;
             // 
             // groupBox1
             // 
@@ -127,7 +138,7 @@
             groupBox1.Controls.Add(btnCancelar);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(txtTitulo);
-            groupBox1.Controls.Add(textPreco);
+            groupBox1.Controls.Add(txtPreco);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(chkPossuiPreparo);
@@ -173,16 +184,6 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F);
-            label1.Location = new Point(129, 51);
-            label1.Name = "label1";
-            label1.Size = new Size(264, 41);
-            label1.TabIndex = 6;
-            label1.Text = "Cadastro Cardapio";
-            // 
             // FrmCardapioCad
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -208,7 +209,7 @@
         private Label label4;
         private CheckBox chkPossuiPreparo;
         private TextBox txtTitulo;
-        private TextBox textPreco;
+        private TextBox txtPreco;
         private GroupBox groupBox1;
         private RichTextBox txtDescricao;
         private Button btnCancelar;
