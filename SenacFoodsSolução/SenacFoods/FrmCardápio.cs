@@ -107,7 +107,7 @@ namespace SenacFoods
             }
         }
 
-       
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -116,8 +116,13 @@ namespace SenacFoods
                 //pegar o cardapio selecionado
                 cardapioSelecionado = dataGridView1.Rows[e.RowIndex].DataBoundItem as CardapioItem;
                 btnEditar.Enabled = true;
-               
+
             }
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

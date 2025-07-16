@@ -12,15 +12,13 @@ namespace SenacFoods
 {
     public partial class FrmMesa : Form
     {
+        Mesa? mesaSelecionado;
         public FrmMesa()
         {
             InitializeComponent();
         }
 
-        private void FrmCardápio_Load(object sender, EventArgs e)
-        {
-            BuscarMesa();
-        }
+
 
         private void BuscarMesa()
         {
@@ -47,12 +45,65 @@ namespace SenacFoods
             BuscarMesa();
         }
 
-        private void btnExcluirCardapio_Click(object sender, EventArgs e)
+        private void btnExcluirMesa_Click(object sender, EventArgs e)
         {
-            Close();
+            if (mesaSelecionado != null)
+            {
+                using (var bancoDeDados = new ComandaDBContext())
+                {
+                    bancoDeDados.Mesas.Remove(mesaSelecionado);
+                    bancoDeDados.SaveChanges();
+                }
+                MessageBox.Show("Mesa excluido com sucesso)", "Sucesso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                BuscarMesa();
+                mesaSelecionado = null;
+            }
+            else
+            {
+                MessageBox.Show("Selecione um cardapio para excluir", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
+
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            BuscarMesa();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            {
+                if (mesaSelecionado != null)
+                {
+                    // abrir o formulário de edição
+                    var frmCardapioEdit = new FrmMesaCad(mesaSelecionado);
+                    frmCardapioEdit.ShowDialog();
+                    BuscarMesa();
+                    mesaSelecionado = null;
+                }
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                //pegar a mesa selecionado
+                mesaSelecionado = dataGridView1.Rows[e.RowIndex].DataBoundItem as Mesa;
+                btnEditar.Enabled = true;
+
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmMesa_Load(object sender, EventArgs e)
         {
             BuscarMesa();
         }

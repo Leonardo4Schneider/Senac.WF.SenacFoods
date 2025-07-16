@@ -12,11 +12,16 @@ namespace SenacFoods
 {
     public partial class FrmMesaCad : Form
     {
+        Mesa _mesa;
         public FrmMesaCad()
         {
             InitializeComponent();
         }
-
+        public FrmMesaCad(Mesa mesa)
+        {
+            _mesa = mesa;
+            InitializeComponent();
+        }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -59,6 +64,30 @@ namespace SenacFoods
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void CarregarDadosDaTela()
+        {
+            //popular os campos de texto e checkbox
+            if (_mesa != null)
+            {
+
+                txtNumeroMesa.Text = _mesa.NumeroMesa.ToString("F2");
+            }
+        }
+
+        private void FrmMesaCad_Load(object sender, EventArgs e)
+        {
+            CarregarDadosDaTela();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void txtNumeroMesa_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

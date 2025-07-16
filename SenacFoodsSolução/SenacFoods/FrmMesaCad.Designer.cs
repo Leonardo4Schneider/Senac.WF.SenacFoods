@@ -72,6 +72,7 @@
             btnFechar.TabIndex = 5;
             btnFechar.Text = "X";
             btnFechar.UseVisualStyleBackColor = false;
+            btnFechar.Click += btnFechar_Click;
             // 
             // groupBox1
             // 
@@ -120,6 +121,7 @@
             txtNumeroMesa.Name = "txtNumeroMesa";
             txtNumeroMesa.Size = new Size(1098, 39);
             txtNumeroMesa.TabIndex = 17;
+            txtNumeroMesa.TextChanged += txtNumeroMesa_TextChanged;
             // 
             // label2
             // 
@@ -146,6 +148,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMesaCad";
             Text = "FrmMesaCad";
+            Load += FrmMesaCad_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);

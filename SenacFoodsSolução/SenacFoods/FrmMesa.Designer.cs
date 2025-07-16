@@ -34,8 +34,8 @@
             txtPesquisa = new TextBox();
             groupBox1 = new GroupBox();
             btnAdicionar = new Button();
-            btnExcluirCardapio = new Button();
-            button2 = new Button();
+            btnExcluirMesa = new Button();
+            btnEditar = new Button();
             dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -86,8 +86,8 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(btnAdicionar);
-            groupBox1.Controls.Add(btnExcluirCardapio);
-            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(btnExcluirMesa);
+            groupBox1.Controls.Add(btnEditar);
             groupBox1.Controls.Add(dataGridView1);
             groupBox1.Location = new Point(16, 141);
             groupBox1.Margin = new Padding(4, 5, 4, 5);
@@ -110,29 +110,30 @@
             btnAdicionar.UseVisualStyleBackColor = false;
             btnAdicionar.Click += btnAdicionar_Click;
             // 
-            // btnExcluirCardapio
+            // btnExcluirMesa
             // 
-            btnExcluirCardapio.BackColor = Color.OrangeRed;
-            btnExcluirCardapio.ForeColor = Color.Black;
-            btnExcluirCardapio.Location = new Point(1090, 424);
-            btnExcluirCardapio.Margin = new Padding(4, 5, 4, 5);
-            btnExcluirCardapio.Name = "btnExcluirCardapio";
-            btnExcluirCardapio.Size = new Size(167, 59);
-            btnExcluirCardapio.TabIndex = 1;
-            btnExcluirCardapio.Text = "% Excluir";
-            btnExcluirCardapio.UseVisualStyleBackColor = false;
-            btnExcluirCardapio.Click += btnExcluirCardapio_Click;
+            btnExcluirMesa.BackColor = Color.OrangeRed;
+            btnExcluirMesa.ForeColor = Color.Black;
+            btnExcluirMesa.Location = new Point(1090, 424);
+            btnExcluirMesa.Margin = new Padding(4, 5, 4, 5);
+            btnExcluirMesa.Name = "btnExcluirMesa";
+            btnExcluirMesa.Size = new Size(167, 59);
+            btnExcluirMesa.TabIndex = 1;
+            btnExcluirMesa.Text = "% Excluir";
+            btnExcluirMesa.UseVisualStyleBackColor = false;
+            btnExcluirMesa.Click += btnExcluirMesa_Click;
             // 
-            // button2
+            // btnEditar
             // 
-            button2.BackColor = Color.Chartreuse;
-            button2.Location = new Point(1276, 424);
-            button2.Margin = new Padding(4, 5, 4, 5);
-            button2.Name = "button2";
-            button2.Size = new Size(175, 59);
-            button2.TabIndex = 2;
-            button2.Text = "% Editar";
-            button2.UseVisualStyleBackColor = false;
+            btnEditar.BackColor = Color.Chartreuse;
+            btnEditar.Location = new Point(1276, 424);
+            btnEditar.Margin = new Padding(4, 5, 4, 5);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(175, 59);
+            btnEditar.TabIndex = 2;
+            btnEditar.Text = "% Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // dataGridView1
             // 
@@ -143,6 +144,8 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1391, 288);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // FrmMesa
             // 
@@ -154,6 +157,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMesa";
             Text = "FrmMesa";
+            Load += FrmMesa_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -168,8 +172,8 @@
         private Button button3;
         private TextBox txtPesquisa;
         private GroupBox groupBox1;
-        private Button btnExcluirCardapio;
-        private Button button2;
+        private Button btnExcluirMesa;
+        private Button btnEditar;
         private DataGridView dataGridView1;
         private Button btnAdicionar;
     }
