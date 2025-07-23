@@ -79,7 +79,7 @@
             dataGridView1.Size = new Size(1482, 515);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+           
             // 
             // btnExcluir
             // 
@@ -154,7 +154,7 @@
             // 
             AutoScaleDimensions = new SizeF(15F, 38F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1546, 934);
+            ClientSize = new Size(1546, 756);
             Controls.Add(panel1);
             Controls.Add(btnEditar);
             Controls.Add(btnExcluir);

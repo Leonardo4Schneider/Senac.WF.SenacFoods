@@ -92,7 +92,7 @@
             // btnSalvar
             // 
             btnSalvar.BackColor = Color.Chartreuse;
-            btnSalvar.Location = new Point(1328, 458);
+            btnSalvar.Location = new Point(1328, 386);
             btnSalvar.Margin = new Padding(4, 5, 4, 5);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(176, 71);
@@ -105,7 +105,7 @@
             // 
             btnCancelar.BackColor = Color.OrangeRed;
             btnCancelar.ForeColor = Color.Black;
-            btnCancelar.Location = new Point(1116, 458);
+            btnCancelar.Location = new Point(1133, 386);
             btnCancelar.Margin = new Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(187, 71);
@@ -142,7 +142,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1574, 692);
+            ClientSize = new Size(1570, 596);
             Controls.Add(groupBox1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;

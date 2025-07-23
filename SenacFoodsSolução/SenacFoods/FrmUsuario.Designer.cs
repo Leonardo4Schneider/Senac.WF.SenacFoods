@@ -28,12 +28,153 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FrmUsuario";
+            groupBox1 = new GroupBox();
+            btnAdicionar = new Button();
+            btnExcluirMesa = new Button();
+            btnEditar = new Button();
+            dataGridView1 = new DataGridView();
+            panel1 = new Panel();
+            label1 = new Label();
+            btnFecharUsuariocs = new Button();
+            txtPesquisa = new TextBox();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(btnAdicionar);
+            groupBox1.Controls.Add(btnExcluirMesa);
+            groupBox1.Controls.Add(btnEditar);
+            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Location = new Point(16, 136);
+            groupBox1.Margin = new Padding(4, 5, 4, 5);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4, 5, 4, 5);
+            groupBox1.Size = new Size(1480, 544);
+            groupBox1.TabIndex = 11;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Usuario";
+            // 
+            // btnAdicionar
+            // 
+            btnAdicionar.BackColor = Color.Yellow;
+            btnAdicionar.Location = new Point(60, 48);
+            btnAdicionar.Margin = new Padding(4, 5, 4, 5);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Size = new Size(168, 52);
+            btnAdicionar.TabIndex = 7;
+            btnAdicionar.Text = "+ Item";
+            btnAdicionar.UseVisualStyleBackColor = false;
+            btnAdicionar.Click += btnAdicionar_Click;
+            // 
+            // btnExcluirMesa
+            // 
+            btnExcluirMesa.BackColor = Color.OrangeRed;
+            btnExcluirMesa.ForeColor = Color.Black;
+            btnExcluirMesa.Location = new Point(1090, 424);
+            btnExcluirMesa.Margin = new Padding(4, 5, 4, 5);
+            btnExcluirMesa.Name = "btnExcluirMesa";
+            btnExcluirMesa.Size = new Size(167, 59);
+            btnExcluirMesa.TabIndex = 1;
+            btnExcluirMesa.Text = "% Excluir";
+            btnExcluirMesa.UseVisualStyleBackColor = false;
+            btnExcluirMesa.Click += btnExcluirMesa_Click;
+            // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.Chartreuse;
+            btnEditar.Location = new Point(1276, 424);
+            btnEditar.Margin = new Padding(4, 5, 4, 5);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(175, 59);
+            btnEditar.TabIndex = 2;
+            btnEditar.Text = "% Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(60, 94);
+            dataGridView1.Margin = new Padding(4, 5, 4, 5);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(1391, 288);
+            dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Aquamarine;
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(btnFecharUsuariocs);
+            panel1.Controls.Add(txtPesquisa);
+            panel1.Location = new Point(-1, -4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1613, 104);
+            panel1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(4, 31);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(90, 25);
+            label1.TabIndex = 3;
+            label1.Text = "Pesquisar:";
+            // 
+            // btnFecharUsuariocs
+            // 
+            btnFecharUsuariocs.BackColor = Color.Black;
+            btnFecharUsuariocs.ForeColor = Color.White;
+            btnFecharUsuariocs.Location = new Point(1538, 3);
+            btnFecharUsuariocs.Name = "btnFecharUsuariocs";
+            btnFecharUsuariocs.Size = new Size(62, 51);
+            btnFecharUsuariocs.TabIndex = 5;
+            btnFecharUsuariocs.Text = "X";
+            btnFecharUsuariocs.UseVisualStyleBackColor = false;
+            btnFecharUsuariocs.Click += btnFecharUsuariocs_Click;
+            // 
+            // txtPesquisa
+            // 
+            txtPesquisa.Location = new Point(152, 31);
+            txtPesquisa.Margin = new Padding(4, 5, 4, 5);
+            txtPesquisa.Name = "txtPesquisa";
+            txtPesquisa.Size = new Size(1098, 31);
+            txtPesquisa.TabIndex = 4;
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
+            // 
+            // FrmUsuario
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1607, 686);
+            Controls.Add(groupBox1);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FrmUsuario";
+            Text = "FrmUsuario";
+            Load += FrmUsuario_Load;
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private GroupBox groupBox1;
+        private Button btnAdicionar;
+        private Button btnExcluirMesa;
+        private Button btnEditar;
+        private DataGridView dataGridView1;
+        private Panel panel1;
+        private Label label1;
+        private Button btnFecharUsuariocs;
+        private TextBox txtPesquisa;
     }
 }

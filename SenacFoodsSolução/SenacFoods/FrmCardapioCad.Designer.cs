@@ -145,7 +145,7 @@
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(18, 139);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1511, 549);
+            groupBox1.Size = new Size(1511, 540);
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cardápio";
