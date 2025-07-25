@@ -74,6 +74,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Gerente", "Operador", "Aminstrador" });
             comboBox1.Location = new Point(19, 550);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(182, 40);
@@ -104,6 +105,7 @@
             txtConfirmarSenha.Name = "txtConfirmarSenha";
             txtConfirmarSenha.Size = new Size(1098, 39);
             txtConfirmarSenha.TabIndex = 27;
+            txtConfirmarSenha.TextChanged += txtConfirmarSenha_TextChanged;
             // 
             // txtSenha
             // 
@@ -112,6 +114,7 @@
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(1098, 39);
             txtSenha.TabIndex = 26;
+            txtSenha.Leave += txtSenha_Leave;
             // 
             // label4
             // 
@@ -149,6 +152,7 @@
             btnSalvar.TabIndex = 22;
             btnSalvar.Text = "% Salvar";
             btnSalvar.UseVisualStyleBackColor = false;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // btnCancelar
             // 
@@ -161,6 +165,7 @@
             btnCancelar.TabIndex = 21;
             btnCancelar.Text = "% Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // txtNome
             // 
@@ -209,6 +214,7 @@
             btnFechar.TabIndex = 5;
             btnFechar.Text = "X";
             btnFechar.UseVisualStyleBackColor = false;
+            btnFechar.Click += btnFechar_Click;
             // 
             // FrmUsuariosCad
             // 
@@ -220,6 +226,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmUsuariosCad";
             Text = "FrmUsuariosCad";
+            Load += FrmUsuariosCad_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             panel1.ResumeLayout(false);

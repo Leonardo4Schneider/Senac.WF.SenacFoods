@@ -139,6 +139,7 @@
             lblMensagem.Size = new Size(263, 54);
             lblMensagem.TabIndex = 5;
             lblMensagem.Text = "lblMensagem";
+            lblMensagem.Click += lblMensagem_Click;
             // 
             // button7
             // 

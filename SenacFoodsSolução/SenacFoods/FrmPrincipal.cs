@@ -60,5 +60,10 @@ namespace SenacFoods
             var buscar = new FrmMesa();
             buscar.Show();
         }
+
+        private void lblMensagem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
